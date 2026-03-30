@@ -1,0 +1,29 @@
+{
+  "bio": "Full Stack Developer based in Meerut, associated with Hira Times. I bridge the gap between cutting-edge UI/UX design and high-performance full-stack development.",
+  "projects": [
+    {
+      "title": "Aura-jewelry",
+      "techStack": ["TypeScript", "Next.js", "Tailwind CSS"],
+      "uxProblemSolved": "Creating a seamless shopping experience emphasizing a modern, minimalist 'Quiet Luxury' editorial aesthetic.",
+      "coreFeatures": ["High-fidelity product showcase", "Premium e-commerce platform flow"]
+    },
+    {
+      "title": "hiratimes.com",
+      "techStack": ["TypeScript", "Next.js", "Tailwind CSS"],
+      "uxProblemSolved": "Enhancing readable consumption of dense news and journalistic content through clean, scalable layouts.",
+      "coreFeatures": ["Dynamic content delivery", "Responsive editorial rendering"]
+    },
+    {
+      "title": "drop-it",
+      "techStack": ["TypeScript", "React", "Node.js", "Supabase"],
+      "uxProblemSolved": "Simplifying seamless file drops and cross-device sharing via minimal, low-friction interactions.",
+      "coreFeatures": ["Instant file handoffs", "Secure data persistence"]
+    },
+    {
+      "title": "Indian-Stock-Screener",
+      "techStack": ["JavaScript", "Chart.js", "HTML/CSS"],
+      "uxProblemSolved": "Visualizing complex stock market fundamentals and comparisons seamlessly without dashboard clutter.",
+      "coreFeatures": ["Fundamental data screener", "Custom mathematical filtering"]
+    }
+  ]
+}
