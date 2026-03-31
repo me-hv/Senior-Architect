@@ -61,3 +61,36 @@ body {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
+
+@media print {
+  /* Hide Next.js Navigation / Footer globally */
+  header, footer, nav, .print-hide {
+    display: none !important;
+  }
+
+  /* Force high-contrast white on print */
+  html, body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Strip dark backgrounds, keep text legible */
+  *, *::before, *::after {
+    background-color: transparent !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  /* A4 page geometry */
+  @page {
+    size: A4;
+    margin: 1.8cm 2cm;
+  }
+
+  /* Prevent page breaks inside experience blocks */
+  section, li, p {
+    page-break-inside: avoid;
+  }
+}

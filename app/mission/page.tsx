@@ -1,37 +1,31 @@
-'use client'
-
-import { motion } from 'framer-motion'
+import { Metadata } from 'next'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { Layers, Terminal, ArrowRight } from 'lucide-react'
-
 import data from '../../data.json'
+
+export const metadata: Metadata = {
+  title: 'Mission Dashboard — Harry Verma',
+  description: 'A transparent look into the fusion of Spatial UI design methodology and Full-Stack implementation.',
+}
 
 export default function MissionDashboard() {
   return (
     <div className="min-h-screen pt-32 pb-20 px-6 max-w-[1400px] mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="mb-16"
-      >
+      <div className="mb-16">
         <h1 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-heading)] mb-4">
           Mission <span className="text-[#7c3aed]">Dashboard</span>
         </h1>
         <p className="text-[var(--foreground)]/60 max-w-2xl text-lg font-light mb-2">
           A transparent look into the fusion of Spatial UI design methodology and Full-Stack implementation.
         </p>
-        <p className="text-[var(--foreground)]/40 max-w-2xl text-md font-light italic border-l-2 border-[#7c3aed]/50 pl-4 mt-4">
+        <p className="text-[var(--foreground)]/40 max-w-2xl text-md font-light italic border-l-2 border-[#7c3aed]/50 pl-4 mt-4 text-sm">
           Admin Bio // {data.bio}
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Design Process */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2 }}
-        >
+        <div>
           <GlassCard glowColor="rgba(124, 58, 237, 0.15)" className="h-[700px]">
             <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/5">
               <Layers className="text-[#7c3aed]" />
@@ -67,14 +61,10 @@ export default function MissionDashboard() {
               </div>
             </div>
           </GlassCard>
-        </motion.div>
+        </div>
 
         {/* Live Code */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-        >
+        <div>
           <GlassCard glowColor="rgba(59, 130, 246, 0.15)" className="h-[700px] flex flex-col">
             <div className="flex items-center gap-3 mb-8 pb-4 border-b border-white/5">
               <Terminal className="text-[#3b82f6]" />
@@ -117,16 +107,11 @@ export default function MissionDashboard() {
               </button>
             </div>
           </GlassCard>
-        </motion.div>
+        </div>
       </div>
 
       {/* Portfolio / Architected Solutions */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="mt-32"
-      >
+      <div className="mt-32">
         <div className="flex items-center gap-4 mb-12">
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-white/10" />
           <h2 className="text-3xl font-bold font-[family-name:var(--font-heading)] flex items-center gap-3">
@@ -137,13 +122,7 @@ export default function MissionDashboard() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {data.projects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
+            <div key={idx}>
               <GlassCard glowColor={idx % 2 === 0 ? "rgba(124, 58, 237, 0.15)" : "rgba(59, 130, 246, 0.15)"} className="h-full flex flex-col p-8">
                 <div className="flex justify-between items-start mb-6">
                   <h3 className="text-2xl font-bold font-[family-name:var(--font-heading)] text-white/90">
@@ -180,10 +159,11 @@ export default function MissionDashboard() {
                   </button>
                 </div>
               </GlassCard>
-            </motion.div>
+            </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
+

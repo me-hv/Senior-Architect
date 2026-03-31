@@ -1,46 +1,12 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
-import { 
-  SiJavascript, SiTypescript, SiPython, SiCplusplus, SiReact, 
-  SiNextdotjs, SiNodedotjs, SiSupabase, SiPostgresql, SiDocker, 
-  SiFigma, SiTailwindcss 
-} from 'react-icons/si'
-import { FaAws } from 'react-icons/fa'
+import { TechStrip } from './TechStrip'
 
-const TECH_STACK = [
-  { name: 'JavaScript', icon: SiJavascript, color: 'hover:text-[#F7DF1E] hover:drop-shadow-[0_0_15px_rgba(247,223,30,0.8)]' },
-  { name: 'TypeScript', icon: SiTypescript, color: 'hover:text-[#3178C6] hover:drop-shadow-[0_0_15px_rgba(49,120,198,0.8)]' },
-  { name: 'Python', icon: SiPython, color: 'hover:text-[#3776AB] hover:drop-shadow-[0_0_15px_rgba(55,118,171,0.8)]' },
-  { name: 'C++', icon: SiCplusplus, color: 'hover:text-[#00599C] hover:drop-shadow-[0_0_15px_rgba(0,89,156,0.8)]' },
-  { name: 'React', icon: SiReact, color: 'hover:text-[#61DAFB] hover:drop-shadow-[0_0_15px_rgba(97,218,251,0.8)]' },
-  { name: 'Next.js', icon: SiNextdotjs, color: 'hover:text-white hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]' },
-  { name: 'Node.js', icon: SiNodedotjs, color: 'hover:text-[#339933] hover:drop-shadow-[0_0_15px_rgba(51,153,51,0.8)]' },
-  { name: 'Supabase', icon: SiSupabase, color: 'hover:text-[#3ECF8E] hover:drop-shadow-[0_0_15px_rgba(62,207,142,0.8)]' },
-  { name: 'PostgreSQL', icon: SiPostgresql, color: 'hover:text-[#4169E1] hover:drop-shadow-[0_0_15px_rgba(65,105,225,0.8)]' },
-  { name: 'Docker', icon: SiDocker, color: 'hover:text-[#2496ED] hover:drop-shadow-[0_0_15px_rgba(36,150,237,0.8)]' },
-  { name: 'AWS', icon: FaAws, color: 'hover:text-[#FF9900] hover:drop-shadow-[0_0_15px_rgba(255,153,0,0.8)]' },
-  { name: 'Figma', icon: SiFigma, color: 'hover:text-[#F24E1E] hover:drop-shadow-[0_0_15px_rgba(242,78,30,0.8)]' },
-  { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'hover:text-[#06B6D4] hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]' },
-]
-
-export function BentoAbout() {
-  return (
-    <section id="about" className="py-24 relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-20">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-16"
-      >
-        <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-sans)] tracking-tight text-white drop-shadow-sm mb-4">
-          Architecting <span className="text-[var(--color-accent)]">Value.</span>
-        </h2>
-        <p className="text-white/50 font-light max-w-xl text-lg">
-          I build high-performance systems and intuitive spatial interfaces that convert users into clients.
-        </p>
-      </motion.div>
-
-      <div className="flex flex-col gap-6">
+export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
+  const content = (
+    <div className="flex flex-col gap-6">
         
         {/* Row 1: Who I Am + Focus */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -92,41 +58,7 @@ export function BentoAbout() {
         </div>
 
         {/* Row 2: Full-Width Tech Marquee */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="rounded-[2rem] pt-10 md:pt-12 pb-16 px-0 border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl relative overflow-hidden flex flex-col w-full group"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/50 via-transparent to-[#0a0a0a]/50 z-10 pointer-events-none w-full" />
-          <h3 className="px-10 text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/40 tracking-[0.2em] uppercase mb-10 relative z-20">
-            [ THE STRIP ]
-          </h3>
-          
-          <div 
-            className="flex relative z-0 w-full"
-            style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}
-          >
-            <motion.div 
-              className="flex items-center gap-12 md:gap-20 min-w-max pr-12 md:pr-20"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
-            >
-              {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
-                <div 
-                  key={`${tech.name}-${i}`} 
-                  className={`group/icon flex flex-col justify-center items-center text-white/30 transition-all duration-300 cursor-default relative h-20 w-16 ${tech.color}`}
-                >
-                  <tech.icon className="w-10 h-10 transition-transform duration-300 transform group-hover/icon:scale-110 group-hover/icon:-translate-y-2" />
-                  <span className="text-[11px] font-bold font-[family-name:var(--font-mono)] opacity-0 translate-y-2 group-hover/icon:opacity-100 group-hover/icon:-translate-y-1 text-white/90 absolute -bottom-6 whitespace-nowrap transition-all duration-300 pointer-events-none">
-                    {tech.name}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.div>
+        <TechStrip />
 
         {/* Row 3: Learning Pill */}
         <motion.div 
@@ -161,6 +93,26 @@ export function BentoAbout() {
         </motion.div>
 
       </div>
+  )
+
+  if (aboutOnly) return content
+
+  return (
+    <section id="about" className="py-24 relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-sans)] tracking-tight text-white drop-shadow-sm mb-4">
+          Architecting <span className="text-[var(--color-accent)]">Value.</span>
+        </h2>
+        <p className="text-white/50 font-light max-w-xl text-lg">
+          I build high-performance systems and intuitive spatial interfaces that convert users into clients.
+        </p>
+      </motion.div>
+      {content}
     </section>
   )
 }

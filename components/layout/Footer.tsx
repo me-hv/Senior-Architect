@@ -86,15 +86,15 @@ export function Footer() {
               [ DIRECTORY ]
             </h3>
             <div className="flex flex-col gap-4 font-[family-name:var(--font-sans)] text-sm font-medium text-white/70">
-              <Link href="/#home" scroll={true} className="hover:text-white transition-colors w-fit relative group/link">
+              <Link href="/" className="hover:text-white transition-colors w-fit relative group/link">
                 Home
                 <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white/50 transition-all duration-300 ease-out group-hover/link:w-full"></span>
               </Link>
-              <Link href="/#work" scroll={true} className="hover:text-white transition-colors w-fit relative group/link">
+              <Link href="/work" className="hover:text-white transition-colors w-fit relative group/link">
                 Selected Missions
                 <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white/50 transition-all duration-300 ease-out group-hover/link:w-full"></span>
               </Link>
-              <Link href="/#about" scroll={true} className="hover:text-white transition-colors w-fit relative group/link">
+              <Link href="/about" className="hover:text-white transition-colors w-fit relative group/link">
                 About
                 <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white/50 transition-all duration-300 ease-out group-hover/link:w-full"></span>
               </Link>

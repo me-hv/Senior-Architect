@@ -1,13 +1,15 @@
+'use client'
+
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { MouseEvent } from 'react';
-import { Zap } from 'lucide-react';
+import { Zap, FileText } from 'lucide-react';
 import Link from 'next/link';
 
 const MagneticButton = ({ children }: { children: React.ReactNode }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const smoothX = useSpring(x, { damping: 15, stiffness: 150, mass: 0.1 });
-  const smoothY = useSpring(y, { damping: 15, stiffness: 150, mass: 0.1 });
+  const smoothX = useSpring(x, { damping: 20, stiffness: 200, mass: 1 });
+  const smoothY = useSpring(y, { damping: 20, stiffness: 200, mass: 1 });
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -80,6 +82,7 @@ export function FloatingHero() {
         visible: { transition: { staggerChildren: 0.15 } }
       }}
       className="max-w-7xl mx-auto relative z-10 w-full min-h-[75vh] flex flex-col justify-center perspective-[1500px]"
+      style={{ contain: 'layout' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -122,12 +125,47 @@ export function FloatingHero() {
             </p>
             
             <div className="flex items-center gap-6">
-              <Link href="#work">
+              <Link href="/work">
                 <MagneticButton>
-                  <button className="px-10 py-4 rounded-full bg-white text-black shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 group hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
+                  <button className="px-10 py-5 rounded-full bg-white text-black transition-all duration-500 group flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
+                    {/* Pulsing Outer Glow */}
+                    <motion.div 
+                      className="absolute inset-0 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.4)] opacity-50"
+                      animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    
                     <span className="relative z-10 flex items-center gap-2">
                        View Case Studies
-                      <span className="block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                      <motion.span 
+                        className="block"
+                        variants={{
+                          initial: { x: 0 },
+                          hover: { 
+                            x: [0, 5, 0],
+                            transition: { 
+                              duration: 0.8,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }
+                          }
+                        }}
+                        initial="initial"
+                        whileHover="hover"
+                      >
+                        →
+                      </motion.span>
+                    </span>
+                  </button>
+                </MagneticButton>
+              </Link>
+
+              <Link href="/resume">
+                <MagneticButton>
+                  <button className="px-10 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-300 group hover:bg-white/10 hover:shadow-[0_0_50px_rgba(255,255,255,0.1)] hover:scale-105 active:scale-95 flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
+                    <span className="relative z-10 flex items-center gap-2">
+                       <FileText className="w-4 h-4" />
+                       Resume
                     </span>
                   </button>
                 </MagneticButton>

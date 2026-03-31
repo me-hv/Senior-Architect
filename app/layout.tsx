@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Logo } from "@/components/ui/Logo";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { AnimatePresence } from "framer-motion";
 
-const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-sans" });
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
@@ -19,11 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${interTight.variable} ${geistMono.variable} dark`} style={{ colorScheme: 'dark' }} suppressHydrationWarning>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`} style={{ colorScheme: 'dark' }} suppressHydrationWarning>
       <body className="antialiased min-h-screen selection:bg-[#7c3aed] selection:text-white overflow-x-hidden" suppressHydrationWarning>
         <SmoothScroll>
+          <Logo />
           <Navbar />
-          {children}
+          <PageTransition>
+            <AnimatePresence mode="wait">
+              {children}
+            </AnimatePresence>
+          </PageTransition>
           <Footer />
         </SmoothScroll>
       </body>
