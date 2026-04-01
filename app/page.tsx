@@ -7,6 +7,7 @@ import { ServicesSection } from '@/components/ui/ServicesSection'
 import { BentoAbout } from '@/components/ui/BentoAbout'
 import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
+import { CTASection } from '@/components/ui/CTASection'
 
 // ── Featured projects teaser data ──────────────────────────────────────────────
 const featuredProjects = [
@@ -165,29 +166,7 @@ export default function Home() {
         <ServicesSection />
 
         {/* ── Contact CTA ── */}
-        <section id="contact" className="py-32 relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-12 mb-32">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-[3rem] p-12 md:p-24 border border-white/20 bg-gradient-to-br from-white/10 to-transparent backdrop-blur-3xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] flex flex-col items-center text-center relative overflow-hidden group"
-          >
-            <div className="absolute inset-0 bg-black/40 mix-blend-overlay pointer-events-none" />
-            <h2 className="text-[2.5rem] md:text-6xl lg:text-[5rem] font-black tracking-tighter text-white mb-6 relative z-10 leading-[1.1]">
-              Ready to <span className="opacity-40">Build?</span>
-            </h2>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl font-light mb-16 relative z-10">
-              Stop settling for restrictive templates. Invest in a bespoke, high-performance platform engineered to dominate.
-            </p>
-            <Link
-              href="/contact"
-              className="px-12 py-5 rounded-full bg-white text-black text-sm md:text-base font-bold tracking-widest uppercase transition-all duration-300 hover:scale-105 hover:bg-white/90 active:scale-95 shadow-[0_0_50px_rgba(255,255,255,0.4)] relative z-10 flex items-center gap-3"
-            >
-              Start a Project
-              <span className="text-xl leading-none">→</span>
-            </Link>
-          </motion.div>
-        </section>
+        <CTASection />
 
       </main>
     </div>
