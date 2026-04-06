@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { MouseEvent } from 'react';
-import { Zap, FileText } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import Link from 'next/link';
 
 const MagneticButton = ({ children }: { children: React.ReactNode }) => {
@@ -88,9 +88,9 @@ export function FloatingHero() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full relative">
         {/* Left Side: Copy */}
-        <div className="lg:col-span-6 flex flex-col items-start text-left relative z-20">
+        <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left relative z-20">
           <motion.div variants={weightlessEntrance}>
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] font-medium mb-10 text-[var(--foreground)]/80 tracking-widest cursor-default uppercase">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-[10px] font-medium mb-8 lg:mb-10 text-[var(--foreground)]/80 tracking-widest cursor-default uppercase mx-auto lg:mx-0">
               <span className="relative flex h-2 w-2 mr-1">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -104,7 +104,7 @@ export function FloatingHero() {
             className="relative"
           >
             <motion.h1 
-              className="text-[4rem] sm:text-[5rem] lg:text-[7rem] font-black tracking-tighter mb-6 font-[family-name:var(--font-sans)] leading-[0.9] relative z-10 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+              className="text-5xl sm:text-7xl lg:text-[7rem] font-black tracking-tighter mb-6 font-[family-name:var(--font-sans)] leading-[0.9] relative z-10 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
               style={{ transform: "translateZ(80px)" }}
             >
               HARRY<br/>VERMA
@@ -114,20 +114,20 @@ export function FloatingHero() {
           <motion.div 
             variants={weightlessEntrance}
             style={{ x: useTransform(xContext, x => x * -0.5), y: useTransform(yContext, y => y * -0.5), willChange: 'transform, opacity' }}
-            className="flex flex-col items-start mt-4"
+            className="flex flex-col items-center lg:items-start mt-4"
           >
-            <h2 className="text-[11px] md:text-xs font-[family-name:var(--font-mono)] tracking-[0.3em] text-white/40 mb-6 uppercase">
+            <h2 className="text-[10px] md:text-xs font-[family-name:var(--font-mono)] tracking-[0.3em] text-white/40 mb-6 uppercase">
               [ ARCHITECTING DIGITAL REALITIES ]
             </h2>
             
-            <p className="text-lg md:text-xl text-white/60 max-w-xl font-light tracking-wide leading-relaxed mb-12">
+            <p className="text-base md:text-xl text-white/60 max-w-xl font-light tracking-wide leading-relaxed mb-10 lg:mb-12">
               Engineering <span className="text-white font-medium">high-ticket products</span>. I bridge the gap between premium spatial UI/UX design and high-performance full-stack development to craft structured sales engines.
             </p>
             
-            <div className="flex items-center gap-6">
-              <Link href="/work">
+            <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6 w-full lg:w-auto">
+              <Link href="/work" className="w-full sm:w-auto">
                 <MagneticButton>
-                  <button className="px-10 py-5 rounded-full bg-white text-black transition-all duration-500 group flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
+                  <button className="w-full sm:w-auto px-10 py-5 rounded-full bg-white text-black transition-all duration-500 group flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
                     {/* Pulsing Outer Glow */}
                     <motion.div 
                       className="absolute inset-0 rounded-full shadow-[0_0_30px_rgba(255,255,255,0.4)] opacity-50"
@@ -160,9 +160,9 @@ export function FloatingHero() {
                 </MagneticButton>
               </Link>
 
-              <Link href="/resume">
+              <Link href="/resume" className="w-full sm:w-auto">
                 <MagneticButton>
-                  <button className="px-10 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-300 group hover:bg-white/10 hover:shadow-[0_0_50px_rgba(255,255,255,0.1)] hover:scale-105 active:scale-95 flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
+                  <button className="w-full sm:w-auto px-10 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-300 group hover:bg-white/10 hover:shadow-[0_0_50px_rgba(255,255,255,0.1)] hover:scale-105 active:scale-95 flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
                     <span className="relative z-10 flex items-center gap-2">
                        <FileText className="w-4 h-4" />
                        Resume
@@ -202,11 +202,11 @@ export function FloatingHero() {
             <div className="p-6 bg-[#020202]/95 backdrop-blur-3xl font-[family-name:var(--font-mono)] text-[13px] sm:text-[14px] leading-[1.7] text-slate-300 w-full overflow-hidden text-left shadow-[inset_0_20px_60px_rgba(0,0,0,0.5)]">
               <div className="flex">
                 <span className="text-slate-600 mr-4 select-none font-bold">1</span>
-                <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">PhysicsEngine</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">'@core/spatial'</span><span className="text-white">;</span></span>
+                <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">PhysicsEngine</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">&apos;@core/spatial&apos;</span><span className="text-white">;</span></span>
               </div>
               <div className="flex">
                 <span className="text-slate-600 mr-4 select-none font-bold">2</span>
-                <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">LiquidGlass</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">'@ui/materials'</span><span className="text-white">;</span></span>
+                <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">LiquidGlass</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">&apos;@ui/materials&apos;</span><span className="text-white">;</span></span>
               </div>
               <div className="flex">
                 <span className="text-slate-600 mr-4 select-none font-bold">3</span>

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { 
   SiJavascript, SiTypescript, SiPython, SiCplusplus, SiReact, 
@@ -25,6 +26,17 @@ const TECH_STACK = [
 ]
 
 export function TechStrip() {
+  const [duration, setDuration] = useState(40)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setDuration(window.innerWidth < 768 ? 60 : 40)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -32,27 +44,27 @@ export function TechStrip() {
       viewport={{ once: true }}
       className="w-full rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-md relative overflow-hidden"
     >
-      <div className="absolute top-10 left-10 text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/20 tracking-[0.3em] uppercase pointer-events-none z-10">
+      <div className="absolute top-6 md:top-10 left-6 md:left-10 text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/20 tracking-[0.3em] uppercase pointer-events-none z-10">
         [ THE STRIP ]
       </div>
       
-      <div className="py-24 relative overflow-hidden flex items-center">
+      <div className="py-16 md:py-24 relative overflow-hidden flex items-center">
         <div 
           className="flex w-full"
           style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}
         >
           <motion.div 
-            className="flex items-center gap-20 min-w-max px-10"
+            className="flex items-center gap-12 md:gap-20 min-w-max px-10"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+            transition={{ repeat: Infinity, duration, ease: "linear" }}
           >
             {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
               <div 
                 key={`${tech.name}-${i}`} 
-                className={`group/icon flex items-center gap-4 text-white/40 transition-all duration-300 transform group-hover/icon:scale-110 group-hover/icon:text-white ${tech.color}`}
+                className={`group/icon flex items-center gap-3 md:gap-4 text-white/40 transition-all duration-300 transform group-hover/icon:scale-110 group-hover/icon:text-white ${tech.color}`}
               >
-                <tech.icon className="w-10 h-10" />
-                <span className="text-xl font-bold font-[family-name:var(--font-mono)] tracking-tight">
+                <tech.icon className="w-7 h-7 md:w-10 md:h-10" />
+                <span className="text-lg md:text-xl font-bold font-[family-name:var(--font-mono)] tracking-tight">
                   {tech.name}
                 </span>
               </div>

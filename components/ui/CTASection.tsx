@@ -73,12 +73,12 @@ function MagneticButton() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileTap={{ scale: 0.96 }}
-      className="relative z-20 group"
+      className="relative z-20 group w-full lg:w-auto"
     >
       <div className={`absolute inset-0 bg-white rounded-full transition-all duration-500 blur-2xl ${isHovered ? 'opacity-30' : 'opacity-10'}`} />
-      <Link href="/contact">
+      <Link href="/contact" className="w-full lg:w-auto block">
         <button
-          className="relative px-10 py-5 rounded-full bg-white !text-black font-black text-sm tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 overflow-hidden"
+          className="relative w-full lg:w-auto px-10 py-5 rounded-full bg-white !text-black font-black text-sm tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all duration-500 overflow-hidden"
         >
           <motion.div
             animate={isHovered ? { x: ['−120%', '220%'] } : { x: '-120%' }}
@@ -95,7 +95,7 @@ function MagneticButton() {
 // ─── Main CTA Section ────────────────────────────────────────────────────────
 export function CTASection() {
   return (
-    <section id="contact" className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-24 mb-[120px]">
+    <section id="contact" className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-12 md:mt-24 mb-[120px]">
       <motion.div
         initial={{ opacity: 0, y: 40, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -109,16 +109,16 @@ export function CTASection() {
           style={{ backgroundImage: NOISE_DATA_URI, backgroundSize: '150px' }}
         />
 
-        <div className="relative z-10 w-full px-12 md:px-16 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-center flex-grow">
+        <div className="relative z-10 w-full px-6 md:px-16 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
           
           {/* Left Column (Span 7) */}
-          <div className="col-span-1 md:col-span-7 flex flex-col gap-6 text-center md:text-left">
+          <div className="col-span-1 lg:col-span-7 flex flex-col gap-6 text-center lg:text-left">
             <motion.h2
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-6xl font-black tracking-tighter !text-white leading-[1.05]"
+              className="text-4xl md:text-6xl font-black tracking-tighter !text-white leading-[1.05]"
             >
               Ready to <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500 inline-block py-2">
@@ -130,15 +130,15 @@ export function CTASection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="max-w-md text-lg !text-zinc-300 font-medium leading-relaxed"
+              className="max-w-md mx-auto lg:mx-0 text-lg !text-zinc-300 font-medium leading-relaxed"
             >
               Stop settling for restrictive templates. Invest in a bespoke, high-performance platform engineered to dominate.
             </motion.p>
           </div>
 
           {/* Right Column (Span 5) */}
-          <div className="col-span-1 md:col-span-5 flex flex-col items-center justify-center gap-10">
-            <div className="flex flex-col items-center md:items-end gap-10">
+          <div className="col-span-1 lg:col-span-5 flex flex-col items-center justify-center gap-10">
+            <div className="flex flex-col items-center lg:items-end gap-10 w-full lg:w-auto">
               <AvailabilityBadge />
               <MagneticButton />
             </div>
@@ -147,9 +147,9 @@ export function CTASection() {
         </div>
 
         {/* Separator & Footer Metadata */}
-        <div className="relative z-10 border-t border-white/10 py-8 px-12 md:px-16 flex justify-center md:justify-start">
+        <div className="relative z-10 border-t border-white/10 py-8 px-6 md:px-16 flex justify-center lg:justify-start overflow-hidden">
           <span 
-            className="text-[9px] tracking-[0.4em] uppercase text-zinc-400 font-bold mix-blend-lighten"
+            className="text-[9px] tracking-[0.2em] sm:tracking-[0.4em] uppercase text-zinc-400 font-bold mix-blend-lighten whitespace-nowrap"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             NO LOCK-IN • FULL SOURCE OWNERSHIP • ENCRYPTED PIPELINE

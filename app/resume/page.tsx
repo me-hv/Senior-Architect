@@ -142,13 +142,13 @@ export default function ResumePage() {
       {/* ── Floating Download Button ── */}
       <PrintButton />
 
-      <main className="max-w-3xl mx-auto px-6 sm:px-10 py-24 md:py-32 print:py-0 print:px-0 print:max-w-none relative z-10">
+      <main className="max-w-3xl mx-auto px-6 sm:px-10 py-16 md:py-32 print:py-0 print:px-0 print:max-w-none relative z-10">
 
         {/* ══════════════════════════════ HEADER ══════════════════════════════ */}
-        <header className="mb-14 print:mb-10">
+        <header className="mb-14 print:mb-10 text-center sm:text-left">
 
           {/* Name */}
-          <h1 className="text-[3.5rem] sm:text-[4.5rem] font-black tracking-tight leading-none text-white mb-4 print:text-5xl print:text-black">
+          <h1 className="text-5xl sm:text-[4.5rem] font-black tracking-tight leading-none text-white mb-6 print:text-5xl print:text-black">
             HARRY<br className="sm:hidden" />{' '}VERMA
           </h1>
 
@@ -161,7 +161,7 @@ export default function ResumePage() {
           </div>
 
           {/* Contact Row */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400 print:text-xs print:text-zinc-600">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-3 text-sm text-zinc-400 print:text-xs print:text-zinc-600">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-zinc-600 print:hidden" />
               Meerut, Uttar Pradesh
