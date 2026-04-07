@@ -34,7 +34,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative w-full bg-[#050505] border-t border-white/5 overflow-hidden">
+    <footer className="relative w-full bg-[#050505] border-t border-white/5 overflow-hidden pb-24 md:pb-0">
       {/* Subtle Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 to-transparent pointer-events-none" />
       
@@ -85,7 +85,7 @@ export function Footer() {
             <h3 className="font-[family-name:var(--font-mono)] text-[11px] font-semibold tracking-[0.2em] text-white/30 uppercase mb-2">
               [ DIRECTORY ]
             </h3>
-            <div className="flex flex-col gap-4 font-[family-name:var(--font-sans)] text-sm font-medium text-white/70">
+            <div className="flex flex-col items-center md:items-start gap-6 md:gap-4 font-[family-name:var(--font-sans)] text-sm font-medium text-white/70">
               <Link href="/" className="hover:text-white transition-colors w-fit relative group/link">
                 Home
                 <span className="absolute left-0 bottom-[-2px] w-0 h-[1px] bg-white/50 transition-all duration-300 ease-out group-hover/link:w-full"></span>
@@ -110,7 +110,7 @@ export function Footer() {
             <h3 className="font-[family-name:var(--font-mono)] text-[11px] font-semibold tracking-[0.2em] text-white/30 uppercase mb-2">
               [ CONNECT ]
             </h3>
-            <div className="flex flex-col gap-4 font-[family-name:var(--font-sans)] text-sm font-medium text-white/70">
+            <div className="flex flex-col items-center md:items-start gap-6 md:gap-4 font-[family-name:var(--font-sans)] text-sm font-medium text-white/70">
               {/* Using a custom hover underline effect */}
               {['GitHub', 'LinkedIn', 'X/Twitter', 'Email'].map((social) => (
                 <a 

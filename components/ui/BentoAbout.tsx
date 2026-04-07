@@ -15,7 +15,7 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2 rounded-[2rem] p-10 md:p-14 border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl flex flex-col justify-center overflow-hidden relative group"
+            className="w-full lg:col-span-2 rounded-[2rem] p-6 md:p-14 border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl flex flex-col justify-center overflow-hidden relative group"
           >
             <div className="relative z-10 space-y-8">
               <h3 className="text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/40 tracking-[0.2em] uppercase">
@@ -33,22 +33,22 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="rounded-[2rem] p-10 md:p-14 border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl flex flex-col justify-center relative overflow-hidden"
+            className="w-full rounded-[2rem] p-6 md:p-14 border border-white/10 bg-white/5 backdrop-blur-3xl shadow-2xl flex flex-col justify-center relative overflow-hidden"
           >
             <div className="relative z-10">
               <h3 className="text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/40 tracking-[0.2em] uppercase mb-10">
                 [ FOCUS ]
               </h3>
               <ul className="space-y-6">
-                <li className="flex items-center gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-sm group/list">
+                <li className="flex items-center gap-3 md:gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-xs sm:text-sm group/list">
                   <span className="text-[#a78bfa] font-bold transition-colors">01.</span>
                   <span className="tracking-widest uppercase group-hover/list:text-white transition-colors">SPATIAL UI/UX</span>
                 </li>
-                <li className="flex items-center gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-sm group/list">
+                <li className="flex items-center gap-3 md:gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-xs sm:text-sm group/list">
                   <span className="text-emerald-400 font-bold transition-colors">02.</span>
                   <span className="tracking-widest uppercase group-hover/list:text-white transition-colors">SCALABLE BACKENDS</span>
                 </li>
-                <li className="flex items-center gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-sm group/list">
+                <li className="flex items-center gap-3 md:gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-xs sm:text-sm group/list">
                   <span className="text-blue-400 font-bold transition-colors">03.</span>
                   <span className="tracking-widest uppercase group-hover/list:text-white transition-colors">SYSTEM ARCHITECTURE</span>
                 </li>
@@ -105,7 +105,7 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
         viewport={{ once: true }}
         className="mb-16"
       >
-        <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-sans)] tracking-tight text-white drop-shadow-sm mb-4">
+        <h2 className="text-3xl md:text-5xl font-bold font-[family-name:var(--font-sans)] tracking-tight text-white drop-shadow-sm mb-4 leading-tight">
           Architecting <span className="text-[var(--color-accent)]">Value.</span>
         </h2>
         <p className="text-white/50 font-light max-w-xl text-lg">

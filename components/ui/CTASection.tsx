@@ -118,7 +118,7 @@ export function CTASection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-black tracking-tighter !text-white leading-[1.05]"
+              className="text-4xl min-[400px]:text-5xl md:text-6xl font-black tracking-tighter !text-white leading-[1.05]"
             >
               Ready to <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-500 inline-block py-2">
@@ -149,7 +149,7 @@ export function CTASection() {
         {/* Separator & Footer Metadata */}
         <div className="relative z-10 border-t border-white/10 py-8 px-6 md:px-16 flex justify-center lg:justify-start overflow-hidden">
           <span 
-            className="text-[9px] tracking-[0.2em] sm:tracking-[0.4em] uppercase text-zinc-400 font-bold mix-blend-lighten whitespace-nowrap"
+            className="text-[9px] tracking-[0.2em] sm:tracking-[0.4em] uppercase text-zinc-400 font-bold mix-blend-lighten text-center leading-relaxed block"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             NO LOCK-IN • FULL SOURCE OWNERSHIP • ENCRYPTED PIPELINE

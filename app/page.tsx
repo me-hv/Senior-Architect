@@ -71,10 +71,10 @@ export default function Home() {
       {/* Glowing Orb */}
       <div className="absolute top-1/4 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 blur-[150px] opacity-10 bg-[#7c3aed] w-[800px] h-[800px] rounded-full pointer-events-none" />
 
-      <main className="w-full flex flex-col justify-start relative pt-12">
+      <main className="w-full flex flex-col justify-start relative pt-12 overflow-x-hidden">
 
         {/* ── Hero ── */}
-        <section id="home" className="w-full min-h-screen flex items-center px-6 lg:px-8">
+        <section id="home" className="w-full min-h-screen flex items-center px-5 md:px-6 lg:px-8">
           <FloatingHero />
         </section>
 
@@ -82,7 +82,7 @@ export default function Home() {
         <BentoAbout />
 
         {/* "Learn More" link to /about */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 -mt-4 mb-12">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 -mt-4 mb-12">
           <Link
             href="/about"
             className="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white transition-colors font-[family-name:var(--font-mono)] tracking-widest uppercase text-xs group"
@@ -93,7 +93,7 @@ export default function Home() {
         </div>
 
         {/* ── Featured Work Teaser ── */}
-        <section className="py-24 relative z-20 max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="py-24 relative z-20 max-w-7xl mx-auto px-5 md:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-16">
             <div>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">

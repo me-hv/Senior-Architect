@@ -29,7 +29,7 @@ const MagneticButton = ({ children }: { children: React.ReactNode }) => {
       style={{ x: smoothX, y: smoothY }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative z-50 cursor-pointer inline-block"
+      className="relative z-50 cursor-pointer w-full sm:w-auto block sm:inline-block"
     >
       {children}
     </motion.div>
@@ -125,7 +125,7 @@ export function FloatingHero() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4 lg:gap-6 w-full lg:w-auto">
-              <Link href="/work" className="w-full sm:w-auto">
+              <Link href="/work" className="w-full sm:w-auto block">
                 <MagneticButton>
                   <button className="w-full sm:w-auto px-10 py-5 rounded-full bg-white text-black transition-all duration-500 group flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
                     {/* Pulsing Outer Glow */}
@@ -160,7 +160,7 @@ export function FloatingHero() {
                 </MagneticButton>
               </Link>
 
-              <Link href="/resume" className="w-full sm:w-auto">
+              <Link href="/resume" className="w-full sm:w-auto block">
                 <MagneticButton>
                   <button className="w-full sm:w-auto px-10 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-300 group hover:bg-white/10 hover:shadow-[0_0_50px_rgba(255,255,255,0.1)] hover:scale-105 active:scale-95 flex items-center justify-center gap-3 font-[family-name:var(--font-sans)] text-sm font-bold tracking-widest uppercase relative overflow-hidden">
                     <span className="relative z-10 flex items-center gap-2">
