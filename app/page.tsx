@@ -71,7 +71,7 @@ export default function Home() {
       {/* Glowing Orb */}
       <div className="absolute top-1/4 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 blur-[150px] opacity-10 bg-[#7c3aed] w-[800px] h-[800px] rounded-full pointer-events-none" />
 
-      <main className="w-full flex flex-col justify-start relative pt-12 overflow-x-hidden">
+      <main className="w-full flex flex-col justify-start relative pt-12 overflow-x-hidden min-w-0 max-w-[100vw]">
 
         {/* ── Hero ── */}
         <section id="home" className="w-full min-h-screen flex items-center px-5 md:px-6 lg:px-8">

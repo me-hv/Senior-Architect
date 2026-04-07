@@ -95,7 +95,7 @@ function MagneticButton() {
 // ─── Main CTA Section ────────────────────────────────────────────────────────
 export function CTASection() {
   return (
-    <section id="contact" className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-12 md:mt-24 mb-[120px]">
+    <section id="contact" className="relative z-20 w-full max-w-7xl mx-auto px-5 md:px-6 lg:px-8 mt-12 md:mt-24 mb-[120px] overflow-hidden md:overflow-visible">
       <motion.div
         initial={{ opacity: 0, y: 40, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}

@@ -112,9 +112,9 @@ export default function MissionDashboard() {
 
       {/* Portfolio / Architected Solutions */}
       <div className="mt-32">
-        <div className="flex items-center gap-4 mb-12">
+        <div className="flex items-center gap-2 md:gap-4 mb-12 w-full overflow-hidden">
           <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-white/10" />
-          <h2 className="text-3xl font-bold font-[family-name:var(--font-heading)] flex items-center gap-3">
+          <h2 className="text-2xl sm:text-3xl font-bold font-[family-name:var(--font-heading)] text-center shrink-0">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c3aed] to-[#3b82f6]">Architected</span> Solutions
           </h2>
           <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-white/10" />
@@ -124,11 +124,11 @@ export default function MissionDashboard() {
           {data.projects.map((project, idx) => (
             <div key={idx}>
               <GlassCard glowColor={idx % 2 === 0 ? "rgba(124, 58, 237, 0.15)" : "rgba(59, 130, 246, 0.15)"} className="h-full flex flex-col p-8">
-                <div className="flex justify-between items-start mb-6">
-                  <h3 className="text-2xl font-bold font-[family-name:var(--font-heading)] text-white/90">
+                <div className="flex flex-col items-start gap-4 mb-6">
+                  <h3 className="text-3xl font-bold font-[family-name:var(--font-heading)] text-white/90">
                     {project.title}
                   </h3>
-                  <div className="flex gap-2 text-xs flex-wrap justify-end max-w-[50%]">
+                  <div className="flex gap-2 text-xs flex-wrap">
                     {project.techStack.map(tech => (
                       <span key={tech} className="px-2 py-1 rounded bg-white/5 border border-white/10 text-white/60 font-mono tracking-wider">
                         {tech}

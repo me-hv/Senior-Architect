@@ -29,7 +29,7 @@ export function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="py-24 relative z-20 max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="services" className="py-24 relative z-20 w-full max-w-7xl mx-auto px-5 md:px-6 lg:px-8 overflow-hidden md:overflow-visible">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-6xl font-black tracking-tighter !text-white mb-4">
           How I Help

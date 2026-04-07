@@ -38,7 +38,7 @@ export function Footer() {
       {/* Subtle Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 to-transparent pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-24 relative z-10 flex flex-col items-center md:items-stretch">
+      <div className="max-w-7xl mx-auto px-5 md:px-6 lg:px-8 py-20 md:py-24 relative z-10 flex flex-col items-center md:items-stretch w-full max-w-full overflow-hidden md:overflow-visible">
         
         {/* Back to Top */}
         <div className="absolute top-12 right-6 md:right-12 z-20 hidden md:block">

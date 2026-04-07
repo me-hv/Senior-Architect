@@ -6,10 +6,10 @@ import { TechStrip } from './TechStrip'
 
 export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
   const content = (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 w-full min-w-0 max-w-full">
         
         {/* Row 1: Who I Am + Focus */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full min-w-0 max-w-full">
           {/* Bio Cell */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -21,7 +21,7 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
               <h3 className="text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/40 tracking-[0.2em] uppercase">
                 [ WHO I AM ]
               </h3>
-              <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white/80 leading-[1.4] font-[family-name:var(--font-sans)] tracking-tight">
+              <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white/80 leading-[1.4] font-[family-name:var(--font-sans)] tracking-tight break-words whitespace-normal w-full">
                 I am a Senior Full-Stack Engineer and UX Designer. I engineer complete, scalable architectures and <span className="text-white font-bold drop-shadow-md">fluid spatial interfaces</span>, deeply prioritizing <span className="text-white font-bold drop-shadow-md">performance and conversion</span> from day one.
               </p>
             </div>
@@ -39,7 +39,7 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
               <h3 className="text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/40 tracking-[0.2em] uppercase mb-10">
                 [ FOCUS ]
               </h3>
-              <ul className="space-y-6">
+              <ul className="space-y-6 w-full min-w-0">
                 <li className="flex items-center gap-3 md:gap-4 text-white/70 font-medium font-[family-name:var(--font-mono)] text-xs sm:text-sm group/list">
                   <span className="text-[#a78bfa] font-bold transition-colors">01.</span>
                   <span className="tracking-widest uppercase group-hover/list:text-white transition-colors">SPATIAL UI/UX</span>
@@ -66,7 +66,7 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="rounded-[2rem] p-6 md:p-8 border border-[#7c3aed]/30 bg-[#7c3aed]/10 backdrop-blur-3xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between shadow-2xl group cursor-default gap-4"
+          className="rounded-[2rem] p-6 md:p-8 border border-[#7c3aed]/30 bg-[#7c3aed]/10 backdrop-blur-3xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between shadow-2xl group gap-4 w-full min-w-0"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#7c3aed]/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
           <div className="flex items-center gap-5 relative z-10 w-full">
@@ -98,7 +98,7 @@ export function BentoAbout({ aboutOnly = false }: { aboutOnly?: boolean }) {
   if (aboutOnly) return content
 
   return (
-    <section id="about" className="py-24 relative z-20 max-w-7xl mx-auto px-6 lg:px-8 mt-20">
+    <section id="about" className="py-24 relative z-20 max-w-7xl mx-auto px-5 md:px-6 lg:px-8 mt-20 w-full overflow-hidden md:overflow-visible">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

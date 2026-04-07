@@ -142,7 +142,7 @@ export default function ResumePage() {
       {/* ── Floating Download Button ── */}
       <PrintButton />
 
-      <main className="max-w-3xl mx-auto px-6 sm:px-10 py-16 md:py-32 print:py-0 print:px-0 print:max-w-none relative z-10">
+      <main className="max-w-3xl mx-auto px-6 sm:px-10 pt-16 pb-48 md:py-32 print:py-0 print:px-0 print:max-w-none relative z-10">
 
         {/* ══════════════════════════════ HEADER ══════════════════════════════ */}
         <header className="mb-14 print:mb-10 text-center sm:text-left">

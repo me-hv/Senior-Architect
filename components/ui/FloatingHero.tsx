@@ -74,6 +74,89 @@ export function FloatingHero() {
     }
   };
 
+  const renderCodeWindow = (wrapperClassName: string) => (
+    <div className={wrapperClassName}>
+      <div className="absolute w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] bg-gradient-to-tr from-[#7c3aed]/20 via-[#3b82f6]/20 to-transparent rounded-full blur-[100px] lg:blur-[120px]" />
+      
+      <motion.div 
+        style={{ 
+          rotateX: useTransform(rotateX, x => x * -1.5), 
+          rotateY: useTransform(rotateY, y => y * -1.5), 
+          x: useTransform(xContext, x => x * -1), 
+          y: useTransform(yContext, y => y * -1),
+          transformStyle: 'preserve-3d', 
+          willChange: 'transform' 
+        }}
+        className="w-full sm:w-[90%] lg:w-[110%] relative z-10 border border-white/20 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)] overflow-hidden"
+      >
+        <div className="h-8 lg:h-10 w-full bg-[#050505]/90 border-b border-white/10 flex items-center px-4 gap-2 backdrop-blur-3xl">
+          <div className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-red-500/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
+          <div className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-amber-500/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
+          <div className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-green-500/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
+          <div className="mx-auto text-[9px] lg:text-[10px] font-[family-name:var(--font-sans)] text-white/40 tracking-widest font-medium">Architecture.tsx</div>
+        </div>
+        
+        <div className="p-4 sm:p-6 bg-[#020202]/95 backdrop-blur-3xl font-[family-name:var(--font-mono)] text-[9.5px] min-[400px]:text-[11px] sm:text-[13px] lg:text-[14px] leading-[1.7] text-slate-300 w-full overflow-hidden text-left shadow-[inset_0_20px_60px_rgba(0,0,0,0.5)]">
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">1</span>
+            <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">PhysicsEngine</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">&apos;@core/spatial&apos;</span><span className="text-white">;</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">2</span>
+            <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">LiquidGlass</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">&apos;@ui/materials&apos;</span><span className="text-white">;</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">3</span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">4</span>
+            <span><span className="text-pink-400">export const</span> <span className="text-amber-300">SystemArchitecture</span> <span className="text-white">=</span> <span className="text-pink-400">() {"=>"}</span> <span className="text-white">{"{"}</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">5</span>
+            <span className="ml-4"><span className="text-pink-400">return</span> <span className="text-white">(</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">6</span>
+            <span className="ml-8"><span className="text-sky-400">{"<"}</span><span className="text-blue-300">PhysicsEngine</span> <span className="text-sky-200">gravity</span><span className="text-white">=</span><span className="text-white">{"{"}</span><span className="text-purple-400">0</span><span className="text-white">{"}"}</span><span className="text-sky-400">{">"}</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">7</span>
+            <span className="ml-12"><span className="text-sky-400">{"<"}</span><span className="text-blue-300">LiquidGlass</span> <span className="text-sky-200">refraction</span><span className="text-white">=</span><span className="text-white">{"{"}</span><span className="text-purple-400">1.5</span><span className="text-white">{"}"}</span><span className="text-sky-400">{">"}</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">8</span>
+            <span className="ml-16 text-slate-500">{"/* Value extraction loop */"}</span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">9</span>
+            <span className="ml-16"><span className="text-sky-400">{"<"}</span><span className="text-blue-300">HighTicketProduct</span> <span className="text-sky-400">{"/>"}</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">10</span>
+            <span className="ml-12"><span className="text-sky-400">{"</"}</span><span className="text-blue-300">LiquidGlass</span><span className="text-sky-400">{">"}</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">11</span>
+            <span className="ml-8"><span className="text-sky-400">{"</"}</span><span className="text-blue-300">PhysicsEngine</span><span className="text-sky-400">{">"}</span></span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">12</span>
+            <span className="ml-4 text-white">);</span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">13</span>
+            <span className="text-white">{"};"}</span>
+          </div>
+          <div className="flex">
+            <span className="text-slate-600 mr-4 select-none font-bold">14</span>
+          </div>
+        </div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] pointer-events-none opacity-30 mix-blend-overlay" />
+      </motion.div>
+    </div>
+  );
+
   return (
     <motion.div 
       initial="hidden"
@@ -98,6 +181,9 @@ export function FloatingHero() {
               Available for new missions
             </div>
           </motion.div>
+          
+          {/* Mobile Only: Insert code block after pill */}
+          {renderCodeWindow("flex lg:hidden items-center justify-center relative h-[350px] sm:h-[450px] w-full perspective-[2000px] my-12 z-20")}
           
           <motion.div 
             style={{ rotateX, rotateY, x: xContext, y: yContext, transformStyle: 'preserve-3d', willChange: 'transform' }}
@@ -174,91 +260,8 @@ export function FloatingHero() {
           </motion.div>
         </div>
 
-        {/* Right Side: Floating Code Component */}
-        <div className="lg:col-span-6 hidden lg:flex items-center justify-center relative h-[500px] w-full perspective-[2000px]">
-          {/* Ambient Glow */}
-          <div className="absolute w-[400px] h-[400px] bg-gradient-to-tr from-[#7c3aed]/20 via-[#3b82f6]/20 to-transparent rounded-full blur-[120px]" />
-          
-          <motion.div 
-            style={{ 
-              rotateX: useTransform(rotateX, x => x * -1.5), 
-              rotateY: useTransform(rotateY, y => y * -1.5), 
-              x: useTransform(xContext, x => x * -1), 
-              y: useTransform(yContext, y => y * -1),
-              transformStyle: 'preserve-3d', 
-              willChange: 'transform' 
-            }}
-            className="w-[110%] relative z-10 border border-white/20 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.8),inset_0_1px_1px_rgba(255,255,255,0.2)] overflow-hidden"
-          >
-            {/* MacOS style window header */}
-            <div className="h-10 w-full bg-[#050505]/90 border-b border-white/10 flex items-center px-4 gap-2 backdrop-blur-3xl">
-              <div className="w-3 h-3 rounded-full bg-red-500/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
-              <div className="w-3 h-3 rounded-full bg-amber-500/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
-              <div className="mx-auto text-[10px] font-[family-name:var(--font-sans)] text-white/40 tracking-widest font-medium">Architecture.tsx</div>
-            </div>
-            
-            {/* Code Content */}
-            <div className="p-6 bg-[#020202]/95 backdrop-blur-3xl font-[family-name:var(--font-mono)] text-[13px] sm:text-[14px] leading-[1.7] text-slate-300 w-full overflow-hidden text-left shadow-[inset_0_20px_60px_rgba(0,0,0,0.5)]">
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">1</span>
-                <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">PhysicsEngine</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">&apos;@core/spatial&apos;</span><span className="text-white">;</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">2</span>
-                <span><span className="text-pink-400">import</span> <span className="text-white">{"{"}</span> <span className="text-sky-300">LiquidGlass</span> <span className="text-white">{"}"}</span> <span className="text-pink-400">from</span> <span className="text-emerald-300">&apos;@ui/materials&apos;</span><span className="text-white">;</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">3</span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">4</span>
-                <span><span className="text-pink-400">export const</span> <span className="text-amber-300">SystemArchitecture</span> <span className="text-white">=</span> <span className="text-pink-400">() {"=>"}</span> <span className="text-white">{"{"}</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">5</span>
-                <span className="ml-4"><span className="text-pink-400">return</span> <span className="text-white">(</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">6</span>
-                <span className="ml-8"><span className="text-sky-400">{"<"}</span><span className="text-blue-300">PhysicsEngine</span> <span className="text-sky-200">gravity</span><span className="text-white">=</span><span className="text-white">{"{"}</span><span className="text-purple-400">0</span><span className="text-white">{"}"}</span><span className="text-sky-400">{">"}</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">7</span>
-                <span className="ml-12"><span className="text-sky-400">{"<"}</span><span className="text-blue-300">LiquidGlass</span> <span className="text-sky-200">refraction</span><span className="text-white">=</span><span className="text-white">{"{"}</span><span className="text-purple-400">1.5</span><span className="text-white">{"}"}</span><span className="text-sky-400">{">"}</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">8</span>
-                <span className="ml-16 text-slate-500">{"/* Value extraction loop */"}</span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">9</span>
-                <span className="ml-16"><span className="text-sky-400">{"<"}</span><span className="text-blue-300">HighTicketProduct</span> <span className="text-sky-400">{"/>"}</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">10</span>
-                <span className="ml-12"><span className="text-sky-400">{"</"}</span><span className="text-blue-300">LiquidGlass</span><span className="text-sky-400">{">"}</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">11</span>
-                <span className="ml-8"><span className="text-sky-400">{"</"}</span><span className="text-blue-300">PhysicsEngine</span><span className="text-sky-400">{">"}</span></span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">12</span>
-                <span className="ml-4 text-white">);</span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">13</span>
-                <span className="text-white">{"};"}</span>
-              </div>
-              <div className="flex">
-                <span className="text-slate-600 mr-4 select-none font-bold">14</span>
-              </div>
-            </div>
-            {/* Scanline overlay */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSIxIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] pointer-events-none opacity-30 mix-blend-overlay" />
-          </motion.div>
-        </div>
+        {/* Right Side: Floating Code Component (Desktop Only) */}
+        {renderCodeWindow("hidden lg:flex lg:col-span-6 items-center justify-center relative lg:h-[500px] w-full perspective-[2000px] mt-8 lg:mt-0")}
       </div>
     </motion.div>
   );

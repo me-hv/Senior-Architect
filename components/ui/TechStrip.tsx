@@ -42,15 +42,15 @@ export function TechStrip() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="w-full rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-md relative overflow-hidden"
+      className="w-full min-w-0 max-w-full rounded-3xl border border-white/10 bg-zinc-900/50 backdrop-blur-md flex flex-col overflow-hidden"
     >
-      <div className="absolute top-6 md:top-10 left-6 md:left-10 text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/20 tracking-[0.3em] uppercase pointer-events-none z-10">
+      <div className="pt-6 px-6 md:pt-10 md:px-10 text-[11px] font-semibold font-[family-name:var(--font-mono)] text-white/20 tracking-[0.3em] uppercase pointer-events-none z-10 w-full">
         [ THE STRIP ]
       </div>
       
-      <div className="py-16 md:py-24 relative overflow-hidden flex items-center">
+      <div className="py-10 md:py-16 relative flex items-center w-full min-w-0 flex-1 overflow-hidden">
         <div 
-          className="flex w-full"
+          className="flex w-full min-w-0 max-w-full overflow-hidden"
           style={{ WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}
         >
           <motion.div 
@@ -74,7 +74,7 @@ export function TechStrip() {
       </div>
       
       {/* Ambient status footer */}
-      <div className="absolute bottom-6 left-10 right-10 flex flex-col md:flex-row items-center justify-between gap-4 py-6">
+      <div className="px-6 pb-6 md:px-10 md:pb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 w-full">
         <div className="flex items-center gap-4">
           <div className="relative flex h-3 w-3 items-center justify-center">
             <motion.div 
@@ -84,7 +84,7 @@ export function TechStrip() {
             />
             <div className="h-2 w-2 rounded-full bg-emerald-500" />
           </div>
-          <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest ">Lab Status // Testing Advanced AI Agents</span>
+          <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest break-words whitespace-normal">Lab Status // Testing Advanced AI Agents</span>
         </div>
         <span className="text-[10px] font-mono text-zinc-700 uppercase tracking-widest hidden md:block">Architected by Harry Verma — 2026</span>
       </div>
